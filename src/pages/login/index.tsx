@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { Container } from './styles'
 import { login } from '../../services/user'
-// import {  } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
     
@@ -41,6 +41,8 @@ export const Login = () => {
                     Entrar
                 </button>
             </form>
+
+            <Link to="/signup">Não tem conta?</Link>
         </Container>
     )
 }
