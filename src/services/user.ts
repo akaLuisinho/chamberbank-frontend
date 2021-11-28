@@ -23,12 +23,14 @@ export async function create(userCredentials: any) {
     }
 }
 
-export async function authenticateToken(token: string) {
+export async function getHome(token: string, route: string) {
     try {
-        const req = await axios.post(`${process.env.REACT_APP_API_URL}/user/create`, {
-            token
+        const req = await axios.get(`${process.env.REACT_APP_API_URL}${route}`, {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
         })
-
+        console.log(req);
         return req.data
     } catch (error) {
         console.log(error);
