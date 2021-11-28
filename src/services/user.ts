@@ -22,3 +22,15 @@ export async function create(userCredentials: any) {
         console.log(error);
     }
 }
+
+export async function authenticateToken(token: string) {
+    try {
+        const req = await axios.post(`${process.env.REACT_APP_API_URL}/user/create`, {
+            token
+        })
+
+        return req.data
+    } catch (error) {
+        console.log(error);
+    }
+}

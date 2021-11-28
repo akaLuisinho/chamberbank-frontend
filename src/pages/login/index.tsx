@@ -1,20 +1,25 @@
 import { useState, FormEvent } from 'react';
 import { Container } from './styles'
 import { login } from '../../services/user'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth'
 
 export const Login = () => {
     
     const [password, setPassword] = useState('')
     const [accountCode, setAccountCode] = useState('')
+    const history = useHistory()
+    const { user, signIn } = useAuth()
 
     const handleLogin = async (event: FormEvent) => {
         event.preventDefault();
 
         const user = await login(accountCode, password)
 
+        
         if(user) {
-            console.log(user);
+            signIn(user)
+            history.push('/home')
         } else {
             setPassword('')
             setAccountCode('')
