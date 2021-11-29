@@ -1,9 +1,14 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import { Sidebar } from "../../components/Sidebar"
 
 export const Extract = () => {
     return (
         <Container>
-            Extract
+            <Content>
+            extract
+            </Content>
+
+            <Sidebar />
         </Container>
     )
 };

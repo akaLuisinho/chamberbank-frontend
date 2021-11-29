@@ -11,6 +11,7 @@ export const Sidebar = () => {
 
             <p>Valor em conta R$: {user.balance}</p>
 
+            <p><Link to="/home">Home</Link></p>
             <p><Link to="/extract">Extrato</Link></p>
             <p><Link to="/transfer">Transferir</Link></p>
             <p><Link to="/addMoney">Adicionar Dinheiro</Link></p>

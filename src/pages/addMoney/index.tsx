@@ -1,9 +1,14 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import { Sidebar } from "../../components/Sidebar"
 
 export const AddMoney = () => {
     return (
         <Container>
-            addMoney
+            <Content>
+            addmoney
+            </Content>
+
+            <Sidebar />
         </Container>
     )
 };
