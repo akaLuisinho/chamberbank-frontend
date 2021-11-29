@@ -1,16 +1,15 @@
-import { useEffect } from 'react'
-import { Container } from './styles'
+import { Container, Content } from './styles'
 import { useAuth } from '../../hooks/useAuth'
-import { getHome } from '../../services/user'
+import { Sidebar } from '../../components/Sidebar'
 
 export const Home = () => {
     const { user, token } = useAuth()
 
-    useEffect(() => {
-        getHome(token, '/user')
-    }, [])
-    return (
+        return (
         <Container>
+            <Content>testing</Content>
+            <Sidebar />
         </Container>
     )
+
 }
