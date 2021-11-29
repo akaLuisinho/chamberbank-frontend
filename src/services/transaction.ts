@@ -15,11 +15,10 @@ export async function findUserByAccountCode(accountCode: string, token: string) 
 export async function transferMoney(toId: string, moneyQuantity: number, token: string) {
     try {
         const req = await axios.post(`${process.env.REACT_APP_API_URL}/transaction`, {
+            toId: toId,
+            moneyQuantity: moneyQuantity,
+        }, {
             headers: { authorization: `Bearer ${token}` },
-            // data: {
-            // moneyQuantity: moneyQuantity,
-            // toId: toId,
-            // }
         })
         return req.data
     } catch (error) {
