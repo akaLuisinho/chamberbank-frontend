@@ -11,3 +11,7 @@ export const Content = styled.div`
     height: 100vh;
     background: #222;
 `
+
+export const Transaction = styled.div`
+    color: #fff;
+`

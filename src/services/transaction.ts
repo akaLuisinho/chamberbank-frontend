@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export async function findUserByAccountCode(accountCode: string, token: string) {
-
     try {
         const req = await axios.get(`${process.env.REACT_APP_API_URL}/user/accountCode/${accountCode}`, {
             headers: { authorization: `Bearer ${token}` },
@@ -25,3 +24,15 @@ export async function transferMoney(toId: string, moneyQuantity: number, token: 
         console.log(error);
     }
 }   
+
+export async function findTransactionsFromUser(token: string) {
+    try {
+        const req = await axios.get(`${process.env.REACT_APP_API_URL}/transaction`, {
+
+            headers: { authorization: `Bearer ${token}` },
+        })
+        return req.data
+    } catch (error) {
+        console.log(error);
+    }
+} 
