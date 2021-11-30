@@ -17,6 +17,7 @@ export const Input = styled.input`
     border-bottom: 1px solid black;
     font-size: 1.2em;
     margin: 15px;
+
     //remove arrow from input type number
     -moz-appearance: textfield;
     input::-webkit-outer-spin-button,
