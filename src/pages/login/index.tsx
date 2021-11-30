@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Container } from './styles'
+import { Container, Form, Input, Button } from './styles'
 import { login } from '../../services/user'
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth'
@@ -29,23 +29,24 @@ export const Login = () => {
         <Container>
             <h1>Chamberbank!</h1>
 
-            <form onSubmit={handleLogin}>
-                <input
+            <Form onSubmit={handleLogin}>
+                <Input
                     type="text"
                     placeholder="N° da Conta"
                     value={accountCode}
                     onChange={e => setAccountCode(e.target.value)}
                 />
-                <input
+                <Input
                     type="password"
                     placeholder="Senha"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <button type="submit">
+
+                <Button type="submit">
                     Entrar
-                </button>
-            </form>
+                </Button>
+            </Form>
 
             <Link to="/signup">Não tem conta?</Link>
         </Container>
