@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Container, Content, SelectAccount, InputQuantity, CheckValues } from "./styles";
+import { Container, Content, Logo, TransferInputs, TransferResponses, Input, Button } from "./styles";
 import { Sidebar } from "../../components/Sidebar"
 import { findUserByAccountCode, transferMoney } from '../../services/transaction'
 import { useAuth } from '../../hooks/useAuth';
@@ -9,11 +9,11 @@ export const Transfer = () => {
 
     const { token } = useAuth()
     const [toAccountCode, setToAccountCode] = useState('')
+    const [moneyQuantity, setMoneyQuantity] = useState('')
     const [toUser, setToUser] = useState<User>()    
 
-    const [moneyQuantity, setMoneyQuantity] = useState('')
 
-    useEffect( () => {
+    useEffect(() => {
         const findToUser = async () => {
             const toUser = await findUserByAccountCode(toAccountCode, token)
     
@@ -21,6 +21,7 @@ export const Transfer = () => {
         }
 
         findToUser()
+
     }, [toAccountCode, token])
 
     const handleTransfer = () => {
@@ -32,60 +33,46 @@ export const Transfer = () => {
             return
         }
     }
-
+    
     return (
         <Container>
             <Content>
-                <SelectAccount>
-                    <input 
-                    type="text"
-                    placeholder="Digite o número da conta..." 
-                    value={toAccountCode}
-                    onChange={(event) => setToAccountCode(event.target.value)}
+                <Logo>Chamberbank!</Logo>
+
+                <TransferInputs>
+                    <Input
+                        type="text"
+                        placeholder="N° da Conta..."
+                        value={toAccountCode}
+                        onChange={(event) => setToAccountCode(event.target.value)}
                     />
 
-                    {toUser &&
-                    <div>
-                        <p>
-                            Nome: {toUser.name}
-                        </p>
-                        <p>
-                           Número da conta: {toUser.accountCode}
-                        </p>
-                        <p>
-                            CPF: {toUser.cpf}
-                        </p>
-                    </div>
-                    }
-
-                </SelectAccount>
-                
-                <InputQuantity>
-                    R$<input
+                    <Input
                         type="number"
-                        placeholder="Digite o valor"
+                        placeholder="Digite o Valor..."
                         value={moneyQuantity}
-                        onChange={(event)=> setMoneyQuantity(event.target.value)}
+                        onChange={(event) => setMoneyQuantity(event.target.value)}
                     />
-                </InputQuantity>
-
-                <CheckValues>
+                </TransferInputs>
+                
+                <TransferResponses>
+                    {toUser &&
+                        <div>
+                            <p>Nome:</p><span>{toUser.name}</span>
+                        
+                            <p>Número da conta:</p><span>{toUser.accountCode}</span>
+                            
+                            <p>CPF:</p><span>{toUser.cpf}</span>
+                        </div>
+                    }
 
                     {toUser && moneyQuantity &&
-                    <div>
-                    <h2>Confira tudo</h2>
-
-                        <p>valor: R$ {moneyQuantity}</p>
-                    
-
-                        <p>para: {toUser.name} </p>
-                        <p>conta: {toUser.accountCode} </p>
-
-                        <button onClick={()=> handleTransfer()}>Transferir</button>
-                    </div>
-
+                        <div>
+                            <p>R$ {moneyQuantity} </p>
+                            <Button onClick={() => handleTransfer()}>Transferir</Button>
+                        </div>
                     }
-                </CheckValues>
+                </TransferResponses>
             </Content>
 
             <Sidebar />
