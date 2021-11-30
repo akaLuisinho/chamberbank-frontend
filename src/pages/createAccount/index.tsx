@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Container } from './styles'
+import { Container, Form, Input, Button } from './styles'
 import { create } from '../../services/user'
 import { Link } from 'react-router-dom'
 
@@ -38,29 +38,29 @@ export const CreateAccount = () => {
         <Container>
             <h1>Chamberbank!</h1>
 
-            <form onSubmit={handleCreateAccount}>
-                <input
+            <Form onSubmit={handleCreateAccount}>
+                <Input
                     type="text"
-                    placeholder="Seu Nome..."
+                    placeholder="Seu Nome Completo..."
                     value={name}
                     onChange={e => setName(e.target.value)}
                     required
                 />
-                <input
+                <Input
                     type="text"
                     placeholder="Seu CPF..."
                     value={cpf}
                     onChange={e => setCpf(e.target.value)}
                     required
                 />
-                <input
+                <Input
                     type="text"
                     placeholder="Seu Telefone..."
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
                     required
                 />
-                <input
+                <Input
                     type="text"
                     placeholder="Seu Email..."
                     value={email}
@@ -68,17 +68,17 @@ export const CreateAccount = () => {
                     required
                 />
                 
-                <input
+                <Input
                     type="password"
-                    placeholder="Sua Senha..."
+                    placeholder="Crie uma Senha..."
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">
-                    Entrar
-                </button>
-            </form>
+                <Button type="submit">
+                    Criar
+                </Button>
+            </Form>
 
             <Link to="/">Já tem conta?</Link>
         </Container>

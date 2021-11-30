@@ -9,7 +9,7 @@ export const Login = () => {
     const [password, setPassword] = useState('')
     const [accountCode, setAccountCode] = useState('')
     const history = useHistory()
-    const { user, signIn } = useAuth()
+    const { signIn } = useAuth()
 
     const handleLogin = async (event: FormEvent) => {
         event.preventDefault();
