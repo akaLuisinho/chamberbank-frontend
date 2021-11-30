@@ -30,7 +30,6 @@ export async function getHome(token: string, route: string) {
             'Authorization': 'Bearer ' + token
         }
         })
-        console.log(req);
         return req.data
     } catch (error) {
         console.log(error);

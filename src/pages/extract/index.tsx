@@ -19,15 +19,6 @@ export const Extract = () => {
         findTransactions()
     }, [token])
 
-    const formatDate = (date: Date) => {
-        console.log(date);
-        // const year = date.getUTCFullYear()
-        // const month = date.getUTCMonth()
-        // const day = date.getUTCDay()
-
-        // return `${day}/${month}/${year}`
-    }
-
     return (
         <Container>
                 <Content>
