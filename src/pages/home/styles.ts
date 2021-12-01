@@ -44,7 +44,7 @@ export const PageButton = styled.div`
 
     &:hover {
         opacity: 0.7;
-        transition: 1s;
+        transition: 80ms;
     }
 `
 

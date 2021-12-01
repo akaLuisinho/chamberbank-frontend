@@ -1,21 +1,40 @@
-import { Container } from './styles';
+import { Container, UserName } from './styles';
 import { useAuth } from '../../hooks/useAuth'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { IconContext } from 'react-icons'
+import { RiLuggageDepositLine, RiHomeLine } from 'react-icons/ri'
+import { GrMoney } from 'react-icons/gr'
+import { BiTransfer } from 'react-icons/bi'
+
 export const Sidebar = () => {
     const { user } = useAuth()
 
     return(
         <Container>
-            {user.name}
-            <hr/>
+            <IconContext.Provider value={{className: 'react-icons'}}>
+                <UserName>
+                    <span>{user.name}</span><br />
+                    <span>R$ {user.balance}</span>
+                    <hr/>
+                </UserName>
 
-            <p>Valor em conta R$: {user.balance}</p>
 
-            <p><Link to="/home">Home</Link></p>
-            <p><Link to="/extract">Extrato</Link></p>
-            <p><Link to="/transfer">Transferir</Link></p>
-            <p><Link to="/addMoney">Adicionar Dinheiro</Link></p>
+                <p><Link className='link-style' to='/home'>
+                    <RiHomeLine />Home
+                </Link></p>
 
+                <p><Link className='link-style' to="/extract">
+                    <GrMoney />Extrato
+                </Link></p>
+
+                <p><Link className='link-style' to="/transfer">
+                    <BiTransfer />Transferir
+                </Link></p>
+
+                <p><Link className='link-style' to="/addMoney">
+                    <RiLuggageDepositLine />Depositar
+                </Link></p>
+            </IconContext.Provider>
         </Container>
     )
 }

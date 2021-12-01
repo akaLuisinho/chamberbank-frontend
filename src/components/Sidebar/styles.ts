@@ -8,4 +8,39 @@ export const Container = styled.div`
     max-width: 250px;
     min-width: 100px;
     background: var(--yellow);
+
+    .link-style {
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .react-icons {
+        width: 20px;
+        height: 20px;
+    }
+
+    p { 
+        font-size: 1.3em;
+        padding-left: 10px;
+        &:hover {
+            color: var(--dark-gray);
+            opacity: 0.7;
+            transition: 80ms;
+        }
+    }
+`
+
+export const UserName = styled.div`
+    color: var(--black);
+    padding: 5px;
+
+    span { 
+        font-size: 1.3em;
+        font-weight: 700;
+        padding: 10px;
+    }
+
+    hr {
+        color: var(--dark-gray);
+    }
 `
