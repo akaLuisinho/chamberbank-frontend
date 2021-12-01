@@ -1,7 +1,8 @@
 import { useState, FormEvent } from 'react';
-import { Container, Form, Input, Button } from './styles'
+import { Container, Form, Input, Button, CreatedUserCredentials } from './styles'
 import { create } from '../../services/user'
 import { Link } from 'react-router-dom'
+import { User } from '../../types/user'
 
 export const CreateAccount = () => {
     
@@ -10,6 +11,8 @@ export const CreateAccount = () => {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
+    const [user, setUser] = useState<User>()
+
 
     const handleCreateAccount = async (event: FormEvent) => {
         event.preventDefault();
@@ -25,7 +28,7 @@ export const CreateAccount = () => {
         const user = await create(userCredentials)
         
         if(user) {
-            console.log(user);
+            setUser(user)
         } else {
             setName('')
             setCpf('')
@@ -37,7 +40,18 @@ export const CreateAccount = () => {
     return(
         <Container>
             <h1>Chamberbank!</h1>
+            {user && 
+                <CreatedUserCredentials>
+                    <p>N° da Conta: {user.accountCode}</p>
+                    <p>Nome: {user.name}</p>
+                    <p>CPF: {user.cpf}</p>
+                    <p>Email: {user.email}</p>
 
+                    <div className="account-alert">Guarde o número da conta, você precisará dele para se logar...</div>
+
+                    <Link className='link-class' to='/'>Ir para login</Link>
+                </CreatedUserCredentials>
+            }
             <Form onSubmit={handleCreateAccount}>
                 <Input
                     type="text"
