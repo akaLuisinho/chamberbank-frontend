@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Content, Input, Button, DepositArea } from "./styles";
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header";
-import { addMoney } from '../../services/addMoney'
+import { deposit } from '../../services/deposit'
 import { useAuth } from "../../hooks/useAuth";
 
 export const AddMoney = () => {
@@ -13,7 +13,7 @@ export const AddMoney = () => {
     const handleAddMoney = () => {
         const formatedMoneyQuantity = parseInt(moneyQuantity)
 
-        addMoney(formatedMoneyQuantity, token)
+        deposit(formatedMoneyQuantity, token)
 
         setMoneyQuantity('')
     }
