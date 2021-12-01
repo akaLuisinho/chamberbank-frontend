@@ -1,4 +1,5 @@
 import { createContext, useState, ReactNode } from 'react'
+import { User } from '../types/user'
 
 type AuthContextProviderProps = {
     children: ReactNode;
@@ -7,7 +8,9 @@ type AuthContextProviderProps = {
 type AuthContextType = {
     user: any,
     token: string,
-    signIn: (user: any) => Promise<void>
+    signIn: (user: User) => Promise<void>
+    setUser: (user: User | {}) => void
+    setToken: (token: string | '') => void
 }
 
 export const AuthContext = createContext({} as AuthContextType)
@@ -26,7 +29,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{user, token, signIn}}>
+        <AuthContext.Provider value={{user, token, signIn, setUser, setToken}}>
             {props.children}
         </AuthContext.Provider>
     )

@@ -1,13 +1,21 @@
 import { Container, UserName, LogoutButton } from './styles';
 import { useAuth } from '../../hooks/useAuth'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import { RiLuggageDepositLine, RiHomeLine } from 'react-icons/ri'
 import { GrMoney } from 'react-icons/gr'
 import { BiTransfer } from 'react-icons/bi'
 import { CgLogOut } from 'react-icons/cg'
+
 export const Sidebar = () => {
-    const { user } = useAuth()
+    const { user, setUser, setToken } = useAuth()
+    const history = useHistory()
+
+    const handleLogout = () => {
+        setUser({})
+        setToken('')
+        return history.push('/')
+    }
 
     return(
         <Container>
@@ -31,12 +39,12 @@ export const Sidebar = () => {
                     <BiTransfer />Transferir
                 </Link></p>
 
-                <p><Link className='link-style' to="/addMoney">
+                <p><Link className='link-style' to="/deposit">
                     <RiLuggageDepositLine />Depositar
                 </Link></p>
 
                 
-                <LogoutButton><CgLogOut />Sair</LogoutButton>
+                <LogoutButton onClick={handleLogout}><CgLogOut />Sair</LogoutButton>
             </IconContext.Provider>
         </Container>
     )
