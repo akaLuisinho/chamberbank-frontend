@@ -1,4 +1,4 @@
-import { Container, Content, Logo, Pages, PageButton } from './styles'
+import { Container, Content, Pages, PageButton, Logo } from './styles'
 import { useAuth } from '../../hooks/useAuth'
 import { Sidebar } from '../../components/Sidebar'
 import { IconContext } from 'react-icons'
@@ -34,7 +34,7 @@ export const Home = () => {
                         <Link className='link-style' to="/addmoney">
                             <PageButton>
                                 <RiLuggageDepositLine />
-                                <p>Depositar Dinheiro</p>
+                                <p>Depositar</p>
                             </PageButton>
                         </Link>
                     </Pages>

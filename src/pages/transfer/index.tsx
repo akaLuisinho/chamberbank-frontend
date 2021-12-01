@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Container, Content, Logo, TransferInputs, TransferResponses, Input, Button } from "./styles";
+import { Container, Content, TransferInputs, TransferResponses, Input, Button } from "./styles";
 import { Sidebar } from "../../components/Sidebar"
+import { Header } from "../../components/Header"
 import { findUserByAccountCode, transferMoney } from '../../services/transaction'
 import { useAuth } from '../../hooks/useAuth';
 import { User } from '../../types/user'
@@ -37,7 +38,7 @@ export const Transfer = () => {
     return (
         <Container>
             <Content>
-                <Logo>Chamberbank!</Logo>
+                <Header />
 
                 <TransferInputs>
                     <Input

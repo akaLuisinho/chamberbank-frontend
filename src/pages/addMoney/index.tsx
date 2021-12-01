@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Container, Content, Input, Button} from "./styles";
+import { Container, Content, Input, Button, DepositArea } from "./styles";
 import { Sidebar } from "../../components/Sidebar"
+import { Header } from "../../components/Header";
 import { addMoney } from '../../services/addMoney'
 import { useAuth } from "../../hooks/useAuth";
 
@@ -18,15 +19,18 @@ export const AddMoney = () => {
     return (
         <Container>
             <Content>
-                <h1>Chamberbank!</h1>
-                <Input
-                    type="number"
-                    placeholder="Digite o valor..."
-                    value={moneyQuantity}
-                    onChange={(event) => setMoneyQuantity(event.target.value)}
-                />
+                <Header />
 
-                <Button onClick={() => handleAddMoney()}>Confirmar</Button>
+                <DepositArea>
+                    <Input
+                        type="number"
+                        placeholder="Digite o valor..."
+                        value={moneyQuantity}
+                        onChange={(event) => setMoneyQuantity(event.target.value)}
+                    />
+
+                    <Button onClick={() => handleAddMoney()}>Confirmar</Button>
+                </DepositArea>
             </Content>
 
             <Sidebar />

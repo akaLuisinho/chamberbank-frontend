@@ -8,6 +8,11 @@ export const Container = styled.div`
 export const Content = styled.div`
     flex: 1;
     height: 100vh;
+`
+
+export const DepositArea = styled.div`
+    flex: 1;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

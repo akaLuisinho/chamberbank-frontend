@@ -5,10 +5,6 @@ export const Container = styled.div`
     height: 100vh;
 `
 
-export const Logo = styled.h1`
-    text-align: center;
-`
-
 export const Input = styled.input`
     color: var(--black);
     background: var(--dark-gray);
