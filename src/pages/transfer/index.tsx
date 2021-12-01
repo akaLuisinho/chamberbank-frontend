@@ -34,7 +34,7 @@ export const Transfer = () => {
             transferMoney(toUser.id, formatedMoneyQuantity, token)
             setUser({
                 ...user,
-                balance: user.balance + formatedMoneyQuantity
+                balance: user.balance - formatedMoneyQuantity
             })
             setToAccountCode('')
             setMoneyQuantity('')

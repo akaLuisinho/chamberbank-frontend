@@ -1,5 +1,4 @@
 import { Container, Content, Pages, PageButton, Logo } from './styles'
-import { useAuth } from '../../hooks/useAuth'
 import { Sidebar } from '../../components/Sidebar'
 import { IconContext } from 'react-icons'
 import { RiLuggageDepositLine } from 'react-icons/ri'
