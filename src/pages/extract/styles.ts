@@ -5,6 +5,11 @@ export const Container = styled.div`
     height: 100vh;
 `
 
+export const Logo = styled.h1`
+    text-align: center;
+    margin-bottom: 100px;
+`
+
 export const Content = styled.div`
     flex: 1;
     height: 100vh;

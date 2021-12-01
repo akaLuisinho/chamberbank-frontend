@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Content, Transaction, TransactionDate, TransactionData, TransactionValue } from "./styles";
+import { Container, Content, Transaction, TransactionDate, TransactionData, TransactionValue, Logo } from "./styles";
 import { Sidebar } from "../../components/Sidebar"
 import { useAuth } from '../../hooks/useAuth'
 import { findTransactionsFromUser } from '../../services/transaction'
@@ -29,6 +29,8 @@ export const Extract = () => {
     return (
         <Container>
                 <Content>
+                    <Logo>Chamberbank!</Logo>
+
                     {transactions.map((transaction: any) =>
                     <Transaction>
                         <TransactionDate>
