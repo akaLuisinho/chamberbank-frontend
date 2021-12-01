@@ -18,7 +18,7 @@ export const Input = styled.input`
     width: 300px;
     height: 40px;
     outline: none;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 4px;
     padding: 2px;
     margin: 10px;
@@ -31,7 +31,7 @@ export const Button = styled.button`
     padding: 15px;
     margin: 25px;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 2px;
     background-color: var(--yellow);
 

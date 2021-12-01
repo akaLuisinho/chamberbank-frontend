@@ -14,7 +14,7 @@ export const Input = styled.input`
     background: var(--dark-gray);
     outline: none;
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
     font-size: 1.2em;
     margin: 15px;
 
@@ -34,7 +34,7 @@ export const Button = styled.button`
     padding: 15px;
     margin: 25px;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 2px;
     background-color: var(--yellow);
 
