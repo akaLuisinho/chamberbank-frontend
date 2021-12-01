@@ -7,6 +7,7 @@ export async function deposit(moneyQuantity: number, token: string) {
         }, {
             headers: { authorization: `Bearer ${token}` },
         })
+        
         return req.data
     } catch (error) {
         console.log(error);

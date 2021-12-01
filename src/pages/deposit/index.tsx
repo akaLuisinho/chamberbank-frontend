@@ -8,14 +8,22 @@ import { useAuth } from "../../hooks/useAuth";
 export const Deposit = () => {
 
     const [moneyQuantity, setMoneyQuantity] = useState('')
-    const { token } = useAuth()
+    const { token, user, setUser } = useAuth()
 
     const handleDeposit = () => {
         const formatedMoneyQuantity = parseInt(moneyQuantity)
 
-        deposit(formatedMoneyQuantity, token)
-
-        setMoneyQuantity('')
+        try {
+            deposit(formatedMoneyQuantity, token)
+            setUser({
+                ...user,
+                balance: user.balance + formatedMoneyQuantity
+            })
+            setMoneyQuantity('')
+        } catch (error) {
+            setMoneyQuantity('')
+        }
+        
     }
 
     return (

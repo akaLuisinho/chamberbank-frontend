@@ -8,8 +8,6 @@ import { BiTransfer } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
 export const Home = () => { 
-    const { user, token } = useAuth()
-
         return (
         <Container>
             <IconContext.Provider value={{className: 'react-icons'}}>
@@ -31,7 +29,7 @@ export const Home = () => {
                             </PageButton>
                         </Link>
 
-                        <Link className='link-style' to="/addmoney">
+                        <Link className='link-style' to="/deposit">
                             <PageButton>
                                 <RiLuggageDepositLine />
                                 <p>Depositar</p>
