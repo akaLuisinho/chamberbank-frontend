@@ -15,7 +15,7 @@ export const Container = styled.div`
     }
 
     .react-icons {
-        width: 20px;
+        width: 30px;
         height: 20px;
     }
 
@@ -42,5 +42,23 @@ export const UserName = styled.div`
 
     hr {
         color: var(--dark-gray);
+    }
+`
+
+export const LogoutButton = styled.button`
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    font-size: 1.3em;
+    padding-left: 10px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--dark-gray);
+        opacity: 0.7;
+        transition: 80ms;
     }
 `
