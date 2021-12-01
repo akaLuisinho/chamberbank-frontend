@@ -14,6 +14,8 @@ export const AddMoney = () => {
         const formatedMoneyQuantity = parseInt(moneyQuantity)
 
         addMoney(formatedMoneyQuantity, token)
+
+        setMoneyQuantity('')
     }
 
     return (

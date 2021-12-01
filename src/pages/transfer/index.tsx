@@ -30,6 +30,9 @@ export const Transfer = () => {
 
         if(toUser) {
             transferMoney(toUser.id, formatedMoneyQuantity, token)
+
+            setToAccountCode('')
+            setMoneyQuantity('')
         } else {
             return
         }
