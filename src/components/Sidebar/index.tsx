@@ -3,6 +3,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { Link, useHistory } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import { RiLuggageDepositLine, RiHomeLine } from 'react-icons/ri'
+import { AiOutlineUser } from 'react-icons/ai'
 import { GrMoney } from 'react-icons/gr'
 import { BiTransfer } from 'react-icons/bi'
 import { CgLogOut } from 'react-icons/cg'
@@ -44,7 +45,7 @@ export const Sidebar = () => {
                 </Link></p>
 
                 <p><Link className='link-style' to="/me">
-                    <RiLuggageDepositLine />Me
+                    <AiOutlineUser />Me
                 </Link></p>
 
                 

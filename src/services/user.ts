@@ -38,3 +38,16 @@ export async function updateUser(user: User, token: string) {
         console.log(error);
     }
 }
+
+export async function deleteUser(token: string) {
+    try {
+        const req = await axios.delete(`${process.env.REACT_APP_API_URL}/user`, {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+        })
+        return req.data
+    } catch (error) {
+        console.log(error);
+    }
+}

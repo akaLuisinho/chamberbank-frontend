@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Container, Content, Input, Button, DepositArea } from "./styles";
-import { Redirect } from 'react-router-dom'
+import { Container, Content, Input, Button, UpdateArea } from "./styles";
+import { useHistory } from 'react-router-dom'
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header";
-import { updateUser } from "../../services/user";
+import { updateUser, deleteUser } from "../../services/user";
 import { useAuth } from "../../hooks/useAuth";
 
 export const Me = () => {
 
     const { token, user, setUser } = useAuth()
-
+    const history = useHistory()
     const [name, setName] = useState(user.name)
     const [cpf, setCpf] = useState(user.cpf)
     const [email, setEmail] = useState(user.email)
@@ -29,9 +29,17 @@ export const Me = () => {
             updateUser(newUser, token)
             setUser(newUser)
 
-            return <Redirect to="/" />
+            history.push('/home')
         } catch (error) {
             return
+        }
+    }
+
+    const deleteAccount = () => {
+        try {
+            deleteUser(token)
+        } catch (error) {
+            
         }
     }
 
@@ -40,7 +48,8 @@ export const Me = () => {
             <Content>
                 <Header />
 
-                <DepositArea>
+                <UpdateArea>
+                    <span>Conta: {user.accountCode}</span>
                     <Input
                         type="text"
                         placeholder="Seu Nome..."
@@ -69,8 +78,9 @@ export const Me = () => {
                         onChange={(event) => setPhone(event.target.value)}
                     />
 
-                    <Button onClick={() => handleChange()}>Alterar Dados</Button>
-                </DepositArea>
+                    <Button color={'yellow'} onClick={() => handleChange()}>Alterar Dados</Button>
+                    <Button color={'red'} onClick={() => deleteAccount()}>Deletar Conta</Button>
+                </UpdateArea>
             </Content>
 
             <Sidebar />

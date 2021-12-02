@@ -10,13 +10,19 @@ export const Content = styled.div`
     height: 100vh;
 `
 
-export const DepositArea = styled.div`
+export const UpdateArea = styled.div`
     flex: 1;
     display: flex;
-    margin-top: 8%;
+    margin-top: 5%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    span { 
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 20px;
+    }
 `
 
 export const Input = styled.input`
@@ -38,7 +44,7 @@ export const Input = styled.input`
     }
 `
 
-export const Button = styled.button`
+export const Button = styled.button<{color: string}>`
     font-size: 1em;
     width: 315px;
     min-height: 30px;
@@ -47,7 +53,7 @@ export const Button = styled.button`
     cursor: pointer;
     border: 1px solid var(--black);
     border-radius: 2px;
-    background-color: var(--yellow);
+    background: ${props => props.color === 'yellow' ? 'var(--yellow)': 'red'};
 
     &:hover {
         opacity: 0.8;
