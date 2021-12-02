@@ -17,19 +17,51 @@
 #### Styled-Components
 - Biblioteca para a criação de estilos
 
+## Getting Started
+
+### Prerequisites
+
+para rodar o projeto em modo de desenvolvimento, você vai precisar do mínimo para rodar uma aplicação em ReactJS, quer pode ser achado [aqui](https://reactjs.org/docs/getting-started.html).
+
+Você também precisará do backend rodando localmente na sua máquina, que pode ser encontrado [aqui](https://github.com/akaluisinho/chamberbank-backend)
+
+### Instalação
+
+**Clonando Repositório**
+
+```
+$ git clone https://github.com/akaLuisinho/chamberbank-frontend
+
+$ cd chamberbank-frontend
+```
+
+**Instalando Dependências**
+
+```
+$ yarn
+```
+
+_ou_
+
+```
+$ npm install
+```
+
 ## Funcionalidades
 
 - ### Home pages
-<img title="a title" alt="Alt text" src="./.github/home.jpg">
+<img title="Home Page" alt="Home Page" src="./.github/home.jpg">
 
 - ### Criação de Usuário
-<img title="a title" alt="Alt text" src="./.github/create.jpg">
+<img title="Create User" alt="Create User" src="./.github/create.jpg">
 
 - ### Autenticação de Usuário
-<img title="a title" alt="Alt text" src="./.github/login.jpg">
+<img title="Authentication" alt="Authentication" src="./.github/login.jpg">
 
 - ### Verificação de Extrato
-<img title="a title" alt="Alt text" src="./.github/extract.jpg">
+<img title="Extract" alt="Extract" src="./.github/extract.jpg">
 
 - ### Transferências Monetárias
-<img title="a title" alt="Alt text" src="./.github/transaction.jpg">
+<img title="Home Page" alt="Home Page" src="./.github/transaction.jpg">
+
+
