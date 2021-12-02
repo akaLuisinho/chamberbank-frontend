@@ -21,7 +21,7 @@ function App() {
           <PrivateRoute path='/extract' exact component={Extract} />
           <PrivateRoute path='/transfer' exact component={Transfer} />
           <PrivateRoute path='/deposit' exact component={Deposit} />
-          <Route path='/me' exact component={Me} />
+          <PrivateRoute path='/me' exact component={Me} />
         </Switch>
       </AuthContextProvider>
     </BrowserRouter>
