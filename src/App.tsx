@@ -8,6 +8,7 @@ import { Home } from './pages/home'
 import { Extract } from './pages/extract'
 import { Transfer } from './pages/transfer'
 import { Deposit } from './pages/deposit'
+import { Me } from './pages/me'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <PrivateRoute path='/extract' exact component={Extract} />
           <PrivateRoute path='/transfer' exact component={Transfer} />
           <PrivateRoute path='/deposit' exact component={Deposit} />
+          <Route path='/me' exact component={Me} />
         </Switch>
       </AuthContextProvider>
     </BrowserRouter>

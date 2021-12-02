@@ -1,4 +1,5 @@
 import axios from "axios";
+import { User } from '../types/user'
 
 export async function login(accountCode: string, password: string) {
     try {
@@ -23,10 +24,12 @@ export async function create(userCredentials: any) {
     }
 }
 
-export async function getHome(token: string, route: string) {
+export async function updateUser(user: User, token: string) {
     try {
-        const req = await axios.get(`${process.env.REACT_APP_API_URL}${route}`, {
-        headers: {
+        const req = await axios.put(`${process.env.REACT_APP_API_URL}/user`, {
+            ...user
+        }, {
+            headers: {
             'Authorization': 'Bearer ' + token
         }
         })

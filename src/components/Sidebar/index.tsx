@@ -43,6 +43,10 @@ export const Sidebar = () => {
                     <RiLuggageDepositLine />Depositar
                 </Link></p>
 
+                <p><Link className='link-style' to="/me">
+                    <RiLuggageDepositLine />Me
+                </Link></p>
+
                 
                 <LogoutButton onClick={handleLogout}><CgLogOut />Sair</LogoutButton>
             </IconContext.Provider>
