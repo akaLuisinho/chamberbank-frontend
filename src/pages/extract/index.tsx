@@ -13,12 +13,12 @@ export const Extract = () => {
 
     useEffect(() => {
         const findTransactions = async () => {
-            const transactions = await findTransactionsFromUser(token)
+            const transactions = await findTransactionsFromUser(user.id)
 
             setTransactions(transactions.reverse())
         }   
         findTransactions()
-    }, [token])
+    }, [user])
 
     const formatDate = (date: string) => {
         const americanDate = date.split('T')

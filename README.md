@@ -19,7 +19,7 @@
 
 ## Getting Started
 
-### Prerequisites
+### Pré-requisitos
 
 para rodar o projeto em modo de desenvolvimento, você vai precisar do mínimo para rodar uma aplicação em ReactJS, quer pode ser achado [aqui](https://reactjs.org/docs/getting-started.html).
 
@@ -45,6 +45,12 @@ _ou_
 
 ```
 $ npm install
+```
+
+**Variáveis Ambiente**
+
+```
+REACT_APP_API_URL=<url do servidor back-end>
 ```
 
 ## Funcionalidades
