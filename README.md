@@ -23,7 +23,7 @@
 
 para rodar o projeto em modo de desenvolvimento, você vai precisar do mínimo para rodar uma aplicação em ReactJS, quer pode ser achado [aqui](https://reactjs.org/docs/getting-started.html).
 
-Você também precisará do backend rodando localmente na sua máquina, que pode ser encontrado [aqui](https://github.com/akaluisinho/chamberbank-backend)
+Você também precisará do backend rodando localmente na sua máquina, que pode ser encontrado [aqui](https://github.com/akaluisinho/chamberbank-backend).
 
 ### Instalação
 
