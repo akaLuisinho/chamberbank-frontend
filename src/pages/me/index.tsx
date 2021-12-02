@@ -38,8 +38,9 @@ export const Me = () => {
     const deleteAccount = () => {
         try {
             deleteUser(token)
+            history.push('/')
         } catch (error) {
-            
+            return
         }
     }
 
