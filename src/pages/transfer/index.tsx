@@ -69,7 +69,6 @@ export const Transfer = () => {
                     <TransferResponses>
                         {toUser &&
                             <div>
-                                {user.balance}
                                 <p>Nome:</p><span>{toUser.name}</span>
                             
                                 <p>Número da conta:</p><span>{toUser.accountCode}</span>
