@@ -28,7 +28,6 @@ export async function transferMoney(toId: string, moneyQuantity: number, token: 
 export async function findTransactionsFromUser(userId: string) {
     try {
         const req = await axios.get(`${process.env.REACT_APP_API_URL}/transaction/${userId}`,{})
-        console.log(req);
         return req.data
     } catch (error) {
         console.log(error);

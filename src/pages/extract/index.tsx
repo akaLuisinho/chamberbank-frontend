@@ -7,7 +7,7 @@ import { findTransactionsFromUser } from '../../services/transaction'
 
 export const Extract = () => {
 
-    const { token, user } = useAuth()
+    const { user } = useAuth()
     const [transactions, setTransactions] = useState([])
 
 
